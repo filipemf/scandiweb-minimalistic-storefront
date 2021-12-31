@@ -1,0 +1,91 @@
+.categoryTitle{
+  font-size: 48px;
+  width: 10%;
+}
+
+.Preview{
+  max-width: 550px;
+  display: grid;
+  width: 330px;
+}
+
+.cur{
+  display: inline;
+  margin: 20px;
+  margin-left: auto;
+  right: 0;
+}
+
+.productName{
+  font-weight: 300;
+}
+
+.container{
+  flex: auto;
+  flex-wrap: 'wrap';
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 50px;
+  
+  display: grid;
+  justify-content: center;
+  margin: auto;
+  max-width: 90%;
+  
+}
+
+.titleDiv{
+  flex: auto;
+  width: 100px;
+  font-weight: 300;
+}
+
+.categoryTitle{
+  margin-left: 11.5vh;
+  flex: 1;
+  flex-wrap: 'wrap';
+}
+
+.currencies-submenu{
+  background: #ffff;
+  left: 0;
+
+  position: absolute;
+  list-style: none;
+  text-align: start;
+  border: green;
+  border-width:20px;
+
+  margin-left: auto;
+  padding: 6px;
+  margin-top: revert;
+  right: -70px;
+
+  width: auto;
+  box-shadow: 0 0 20px -15px;
+}
+
+.currencies-submenu li{
+  
+  cursor: pointer;
+  
+}
+
+.submenu-item{
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: white;
+  padding: 16px;
+}
+
+.currency-option{
+  justify-content: center;
+  display: flex;
+}
+
+.dropdownContainer{
+  display: block;
+  position: absolute;
+  left: -25px;
+}
