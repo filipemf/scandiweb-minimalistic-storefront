@@ -2,37 +2,35 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+img{
+  height: 350px;
+  width: 330px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+a{
+  margin: 15px;
+  padding: 10px;
+  color: black;
+  text-decoration: none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.currencyButton{
+  display: inline;
+  right: 0;
+  margin: 10px;
+  margin-left: 50px;
+}
+
+.cartButton{
+  display: inline;
+  margin: 30px;
+}
+
+nav{
+  color: black;
+  right: 20px;
+  margin: 1vw;
+  margin-right: 5px;
+  margin-left: 80px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }

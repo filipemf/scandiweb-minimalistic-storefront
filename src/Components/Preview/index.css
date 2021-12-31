@@ -1,0 +1,15 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.Preview{
+    margin: 10%;
+    padding: 10px;
+}
+
+.productPrice{
+    font-weight: bold;
+}
+

@@ -1,0 +1,46 @@
+.categoryTitle{
+  font-size: 48px;
+  width: 10%;
+}
+
+.Preview{
+  max-width: 550px;
+  display: grid;
+  width: 330px;
+}
+
+.cur{
+  display: inline;
+  margin: 20px;
+  margin-left: auto;
+  right: 0;
+}
+
+.productName{
+  font-weight: 300;
+}
+
+.container{
+  flex: auto;
+  flex-wrap: 'wrap';
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 50px;
+  
+  display: grid;
+  justify-content: center;
+  margin: auto;
+  max-width: 90%;
+  
+}
+
+.titleDiv{
+  flex: auto;
+  width: 100px;
+  font-weight: 300;
+}
+
+.categoryTitle{
+  margin-left: 11.5vh;
+  flex: 1;
+  flex-wrap: 'wrap';
+}
