@@ -1,6 +1,7 @@
-# Getting Started with Create React App
+# Scandiweb Minimalistic Storefront
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was created for the Scandiweb Entry React developer Test.
+Made by: Filipe Marques Ferreira.
 
 ## Available Scripts
 
