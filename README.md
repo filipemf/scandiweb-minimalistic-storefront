@@ -6,7 +6,7 @@ Made by: Filipe Marques Ferreira.
 
 # Project Description
 
-A minimalistic storefront fetching data from a GraphQL endpoint and interface as per design (https://www.figma.com/file/MSyCAqVy1UgNap0pvqH6H3/Junior-Frontend-Test-Designs-Public?node-id=0%3A1). In order to run this project, you also need the GraphQL endpoint, wich can be found at: https://github.com/scandiweb/junior-react-endpoint
+A minimalistic storefront fetching data from a GraphQL endpoint and interface as per design (https://www.figma.com/file/MSyCAqVy1UgNap0pvqH6H3/Junior-Frontend-Test-Designs-Public?node-id=0%3A1). In order to run this project, you also need the GraphQL endpoint, which can be found at: https://github.com/scandiweb/junior-react-endpoint
 
 ## Available Scripts
 
