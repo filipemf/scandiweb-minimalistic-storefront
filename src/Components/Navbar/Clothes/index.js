@@ -1,9 +1,8 @@
 import { PureComponent } from 'react';
-import GetProduct from '../../GetProduct';
 
 import {gql} from '@apollo/client';
 import { client } from '../../../GraphQL/client';
-import {LOAD_CLOTHES} from '../../../GraphQL/Queries'
+import {LOAD_CLOTHES, LOAD_CURRENCIES} from '../../../GraphQL/Queries'
 
 import Preview from '../../Preview';
 
@@ -15,14 +14,27 @@ export class Clothes extends PureComponent {
         this.state = {
             data: {},
             product: {},
-            currency: "USD",
-            symbol: "",
-            loading: true
+            loading: true,
+            allCurrencies: []
         }
     }
 
 
     render() {
+
+
+        //Get all avaliable currencies and set them to state
+        client
+        .query({
+            query: gql`
+            ${LOAD_CURRENCIES}
+            `
+        }).then((result)=>{
+            this.setState({allCurrencies: result.data.currencies})     
+        });
+
+        
+        //Get all avaliable clothes and set loading to false if still loading
         client
             .query({
                 query: gql`
@@ -32,6 +44,7 @@ export class Clothes extends PureComponent {
                 this.setState({data: result.data})
                 this.setState({loading: result.loading})           
             });
+        
 
         if (this.state.loading == true){
             return(
@@ -48,18 +61,23 @@ export class Clothes extends PureComponent {
 
                     <div class="container">
                         {this.state.data.category.products.map((val)=>{
+                            //Map every product to get its price
+                            console.log(val)
                             const currencySelected = val.prices
                             
                             let symbol = ""
                             let amount = 0
+
+                            //Check every price to get the price for the selected currency
                             currencySelected.forEach(element => {
-                                if(element.currency.label =="USD"){
+                                if(element.currency.label == localStorage['currency']){
                                     symbol = element.currency.symbol
                                     amount = element.amount
                                 }
                             });
 
-                            return <Preview key={val.id} id={val.id} gallery={val.gallery[0]} name={val.name} symbol={symbol} amount={amount} />
+                            //Render the preview
+                            return <Preview key={val.id} id={val.id} gallery={val.gallery[0]} name={val.name} symbol={symbol} amount={amount} attributes={val.attributes} />
                         })}
                     </div>
                 </>

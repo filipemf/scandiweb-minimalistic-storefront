@@ -2,6 +2,7 @@ import {ApolloClient, InMemoryCache, ApolloProvider, HttpLink, from, gql} from '
 import {onError} from '@apollo/client/link/error';
 
 
+//Setting Client to connect with GraphQL API
 const errorLink = onError(({graphqlErrors, networkError})=>{
     if (graphqlErrors){
       graphqlErrors.map(({message, location, path})=>{

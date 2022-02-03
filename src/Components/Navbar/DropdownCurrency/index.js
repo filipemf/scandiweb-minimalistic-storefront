@@ -1,11 +1,9 @@
 import { PureComponent } from 'react';
-import GetProduct from '../../GetProduct';
 
 import {gql} from '@apollo/client';
 import { client } from '../../../GraphQL/client';
-import {LOAD_CLOTHES} from '../../../GraphQL/Queries'
+import {LOAD_CURRENCIES} from '../../../GraphQL/Queries'
 
-import Preview from '../../Preview';
 
 import '../pagesStyles.css'
 import { Link } from 'react-router-dom';
@@ -15,45 +13,47 @@ export class DropdownCurrency extends PureComponent {
         super(props);
         this.state = {
             open: true,
-            selection: []
+            selection: [],
+            currencies : [],
         }
+
+        this.handleCurrencySelection = this.handleCurrencySelection.bind(this)
+    }
+    
+    handleCurrencySelection(symbol, currency){
+        //Change the current currency to another one and reload the page to load every product price again
+        this.setState({open: false})
+
+        localStorage['symbol'] = symbol
+
+        localStorage['currency'] = currency
+
+        localStorage.removeItem('product')
+
+        window.location.reload()
+
     }
 
-
     render() {
-        const cur = [
-            {
-              "label": "USD",
-              "symbol": "$"
-            },
-            {
-              "label": "GBP",
-              "symbol": "£"
-            },
-            {
-              "label": "AUD",
-              "symbol": "A$"
-            },
-            {
-              "label": "JPY",
-              "symbol": "¥"
-            },
-            {
-              "label": "RUB",
-              "symbol": "₽"
-            }
-          ]
+        //Render all currencies
+        client
+          .query({
+              query: gql`
+              ${LOAD_CURRENCIES}
+              `
+          }).then((result)=>{
+                this.setState({currencies: result.data.currencies})       
+          });
 
     
         if (this.state.open == true){
             return(
                     <div className='dropdownContainer'>
-                    
                         <ul className="currencies-submenu" onClick={()=> this.setState({open: !this.state.open})}>
-                            {cur.map((item)=>{
+                            {this.state.currencies.map((item)=>{
                                 return (
                                     <li key={item.symbol}>
-                                        <Link to="#" className="currency-option" onClick={()=> this.setState({open: false})}>
+                                        <Link to="#" className="currency-option" onClick={()=> this.handleCurrencySelection(item.symbol, item.label)}>
                                             {item.symbol} {item.label}
                                         </Link>
                                     </li>

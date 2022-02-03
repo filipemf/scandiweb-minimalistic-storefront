@@ -1,5 +1,4 @@
 import { PureComponent } from 'react';
-import GetProduct from '../../GetProduct';
 
 import {gql} from '@apollo/client';
 import { client } from '../../../GraphQL/client';
@@ -23,6 +22,7 @@ export class Tech extends PureComponent {
 
 
     render() {
+        //Get all tech products
         client
             .query({
                 query: gql`
@@ -54,13 +54,13 @@ export class Tech extends PureComponent {
                             let symbol = ""
                             let amount = 0
                             currencySelected.forEach(element => {
-                                if(element.currency.label =="USD"){
+                                if(element.currency.label == localStorage['currency']){
                                     symbol = element.currency.symbol
                                     amount = element.amount
                                 }
                             });
 
-                            return <Preview key={val.id} id={val.id} gallery={val.gallery[0]} name={val.name} symbol={symbol} amount={amount} />
+                            return <Preview key={val.id} id={val.id} gallery={val.gallery[0]} name={val.name} symbol={symbol} amount={amount} attributes={val.attributes} />
                         })}
                     </div>
                 </>

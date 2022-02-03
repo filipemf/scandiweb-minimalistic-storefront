@@ -1,14 +1,9 @@
 import {gql} from '@apollo/client'
 
-export const LOAD_PRODUCTS = gql`
-    query ProductQuery{
-        product (id: "ps-5"){
-            id
-            name
-        }
-    }
-`
+//Search Queries
 
+
+//Search for All products
 export const LOAD_ALL = gql`
     query TestQuery{
         category (input: {title: "all"}) {
@@ -17,6 +12,16 @@ export const LOAD_ALL = gql`
             id
             name
             gallery
+            attributes{
+                id
+                name
+                type
+                items{
+                  displayValue
+                  value
+                  id
+                }
+              }
             prices {
             currency{
                 label
@@ -29,6 +34,7 @@ export const LOAD_ALL = gql`
     }
 `
 
+//Search for Tech products
 export const LOAD_TECH = gql`
     query TestQuery{
         category (input: {title: "tech"}) {
@@ -37,6 +43,16 @@ export const LOAD_TECH = gql`
             id
             name
             gallery
+            attributes{
+                id
+                name
+                type
+                items{
+                  displayValue
+                  value
+                  id
+                }
+              }
             prices {
             currency{
                 label
@@ -49,6 +65,7 @@ export const LOAD_TECH = gql`
     }
 `
 
+//Search for Clothes products
 export const LOAD_CLOTHES = gql`
     query TestQuery{
         category (input: {title: "clothes"}) {
@@ -57,6 +74,16 @@ export const LOAD_CLOTHES = gql`
             id
             name
             gallery
+            attributes{
+                id
+                name
+                type
+                items{
+                  displayValue
+                  value
+                  id
+                }
+              }
             prices {
             currency{
                 label
@@ -66,5 +93,16 @@ export const LOAD_CLOTHES = gql`
             }
         }
         }
+    }
+`
+
+//Search for available currencies
+export const LOAD_CURRENCIES = gql`
+    query TestQuery{
+        currencies {
+            label
+            symbol
+        }
+        
     }
 `

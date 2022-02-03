@@ -13,3 +13,57 @@
     font-weight: bold;
 }
 
+.Preview{
+    max-width: 550px;
+    display: grid;
+    width: 350px;
+    position: relative;
+    
+  }
+
+img{
+    box-shadow: 0 0 20px -19px;
+}
+
+.buttonCart {
+    display:inline;
+    margin-left: 270px;
+
+    cursor: pointer;
+
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    border: 0px solid #fff;
+
+    background-color: #5ece7b;
+    
+}
+
+.cartSvg{
+    background-size: contain;
+    width: 30px;
+    height: 30px;
+    margin-top: 5px;
+    color: #fff;
+}
+
+img:hover + .buttonCart, .buttonCart:hover{
+    
+}
+
+.Preview:hover {
+    box-shadow: 0 0 20px -15px;
+    overflow: hidden;
+    background-size: 10%;
+}
+
+.attributes-container{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.productImage{
+    position: relative;
+}
+

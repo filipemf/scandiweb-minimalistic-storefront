@@ -1,0 +1,46 @@
+.cartPreviewContainer{
+    margin: 20px;
+    position: relative;
+
+    margin-bottom: 100px;
+    
+}
+
+.cartImagePreview{
+    width: 105px;
+    height: 130px;
+    position: absolute;
+    right: 0;
+    display:inline;
+    left: 180px;
+}
+
+.quantityInCart{
+    margin-left: 150px;
+}
+
+.plus-cart{
+    margin-left: 150px;
+    border: solid black;
+    border-width: 1px;
+    background: white;
+
+    width: 20px;
+
+    bottom: 45px;
+
+    position: absolute;
+}
+
+.minus-cart{
+    margin-left: 150px;
+    border: solid black;
+    border-width: 1px;
+    background: white;
+
+    width: 20px;
+
+    position: absolute;
+
+    top: 110px;
+}

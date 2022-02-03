@@ -34,7 +34,9 @@ nav{
   margin-right: 5px;
   margin-left: 80px;
   display: flex;
+  z-index: 2;
 }
+
 
 .categoriesLink{
   margin: 15px;
@@ -65,5 +67,13 @@ nav{
     transform-origin: center top;
   -webkit-transform: scale(1, 1);
           transform: scale(1, 1);
+}
+
+.navbarCartSvg{
+  background-size: contain;
+  width: 20px;
+  height: 20px;
+  margin-top: 5px;
+  color: #fff;
 }
 
